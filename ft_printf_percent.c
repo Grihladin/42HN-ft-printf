@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_uint.c                                   :+:      :+:    :+:   */
+/*   ft_printf_percent.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 15:19:39 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/18 16:06:12 by mratke           ###   ########.fr       */
+/*   Created: 2024/10/18 15:54:01 by mratke            #+#    #+#             */
+/*   Updated: 2024/10/18 16:15:18 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_uint(unsigned int n)
+int	ft_printf_percent(void)
 {
-	char	convert;
-	int		n_len;
+	char	procent;
 
-	n_len = 0;
-	if (n == 0)
-	{
-		write(1, "0", 1);
-		return (1);
-	}
-	if (n >= 10)
-		n_len += ft_printf_uint(n / 10);
-	convert = (n % 10) + '0';
-	write(1, &convert, 1);
-	return (n_len + 1);
+	procent = '%';
+	write(1, &procent, 1);
+	return (1);
 }
