@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:54:32 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/18 12:25:23 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/18 15:04:21 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	ft_printf(const char *format, ...)
 	int		printed_len;
 	char	c;
 	char	*str;
+	int		integer;
 
 	i = 0;
 	printed_len = 0;
@@ -38,6 +39,11 @@ int	ft_printf(const char *format, ...)
 				str = va_arg(args, char *);
 				printed_len += ft_printf_str(str);
 			}
+			else if (format[i] == 'i' || format[i] == 'd')
+			{
+				integer = va_arg(args, int);
+				printed_len += ft_printf_int(integer);
+			}
 		}
 		else
 			printed_len += ft_printf_char(format[i]);
@@ -47,12 +53,10 @@ int	ft_printf(const char *format, ...)
 	return (printed_len);
 }
 
-int	main(void)
-{
-	int	len;
-	int	correct_len;
+// int	main(void)
+// {
+// 	int	i;
 
-	len = ft_printf("%s \n", "Hello Mcichel!");
-	correct_len = printf("%s \n", "Hello Mcichel!");
-	printf("%i \n %i", len, correct_len);
-}
+// 	i = 21324354;
+// 	ft_printf("%i", i);
+// }
