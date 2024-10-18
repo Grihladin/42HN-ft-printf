@@ -6,15 +6,15 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 16:06:56 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/17 16:11:40 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/18 11:41:37 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+// #include "ft_printf.h"
 
-int	ft_printf_ptr(void *ptr)
-{
-	char	*c_ptr;
+// int	ft_printf_ptr(void *ptr)
+// {
+// 	char	*c_ptr;
 
-	c_ptr = (char *)ptr;
-}
+// 	c_ptr = (char *)ptr;
+// }

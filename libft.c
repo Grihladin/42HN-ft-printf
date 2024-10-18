@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   my_libft_ft.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 15:40:17 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/18 11:12:20 by mratke           ###   ########.fr       */
+/*   Created: 2024/10/18 10:52:57 by mratke            #+#    #+#             */
+/*   Updated: 2024/10/18 11:38:05 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_char(int c)
+int	ft_strlen(const char *str)
 {
-	write(1, &c, 1);
-	return (1);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

@@ -12,18 +12,6 @@
 
 #include "ft_printf.h"
 
-static int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
 int	ft_printf_str(char *s)
 {
 	int	s_len;
