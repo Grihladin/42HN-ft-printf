@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:14:19 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/18 14:48:56 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/18 15:21:42 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int	ft_printf(const char *format, ...);
 int	ft_printf_char(int c);
 int	ft_printf_str(char *s);
 int	ft_printf_int(int n);
+int	ft_printf_uint(unsigned int n);
 #endif

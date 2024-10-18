@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:54:32 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/18 15:09:54 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/18 15:24:14 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	ft_printf(const char *format, ...)
 				printed_len += ft_printf_str(va_arg(args, char *));
 			else if (format[i] == 'i' || format[i] == 'd')
 				printed_len += ft_printf_int(va_arg(args, int));
+			else if (format[i] == 'u')
+				printed_len += ft_printf_uint(va_arg(args, unsigned int));
 		}
 		else
 			printed_len += ft_printf_char(format[i]);
