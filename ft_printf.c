@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:54:32 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/18 15:04:21 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/18 15:09:54 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		i;
 	int		printed_len;
-	char	c;
-	char	*str;
-	int		integer;
 
 	i = 0;
 	printed_len = 0;
@@ -30,27 +27,17 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'c')
-			{
-				c = (char)va_arg(args, int);
-				printed_len += ft_printf_char(c);
-			}
+				printed_len += ft_printf_char((char)va_arg(args, int));
 			else if (format[i] == 's')
-			{
-				str = va_arg(args, char *);
-				printed_len += ft_printf_str(str);
-			}
+				printed_len += ft_printf_str(va_arg(args, char *));
 			else if (format[i] == 'i' || format[i] == 'd')
-			{
-				integer = va_arg(args, int);
-				printed_len += ft_printf_int(integer);
-			}
+				printed_len += ft_printf_int(va_arg(args, int));
 		}
 		else
 			printed_len += ft_printf_char(format[i]);
 		i++;
 	}
-	va_end(args);
-	return (printed_len);
+	return (va_end(args), printed_len);
 }
 
 // int	main(void)
