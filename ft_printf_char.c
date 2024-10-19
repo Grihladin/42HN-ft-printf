@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:40:17 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/18 11:12:20 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/19 19:04:21 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_printf_char(int c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }

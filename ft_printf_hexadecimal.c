@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:59:29 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/19 18:38:00 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/19 19:01:49 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	ft_printf_hexadecimal(unsigned int n, int type)
 		convert = (n % 16) + '0';
 	else
 		convert = ((n % 16) - 10) + upper_or_lower;
-	write(1, &convert, 1);
+	if (ft_printf_char(convert) == -1)
+		return (-1);
 	return (n_len + 1);
 }

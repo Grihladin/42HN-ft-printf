@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:54:01 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/18 16:15:18 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/19 19:18:50 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,5 @@ int	ft_printf_percent(void)
 	char	procent;
 
 	procent = '%';
-	write(1, &procent, 1);
-	return (1);
+	return (ft_printf_char(procent));
 }
