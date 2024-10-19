@@ -6,37 +6,35 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:54:32 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/18 18:20:54 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/19 18:37:27 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_printf_format_definer(const char *format, int i, va_list args)
+static unsigned long long	ft_printf_format_definer(const char *format, int i,
+		va_list args)
 {
-	int	printed_len;
-
-	printed_len = 0;
 	if (format[i] == 'c')
-		printed_len += ft_printf_char((char)va_arg(args, int));
+		return (ft_printf_char((char)va_arg(args, int)));
 	else if (format[i] == 's')
-		printed_len += ft_printf_str(va_arg(args, char *));
+		return (ft_printf_str(va_arg(args, char *)));
 	else if (format[i] == 'i' || format[i] == 'd')
-		printed_len += ft_printf_int(va_arg(args, int));
+		return (ft_printf_int(va_arg(args, int)));
 	else if (format[i] == 'u')
-		printed_len += ft_printf_uint(va_arg(args, unsigned int));
+		return (ft_printf_uint(va_arg(args, unsigned int)));
 	else if (format[i] == 'p')
-		printed_len += ft_printf_ptr(va_arg(args, void *));
+		return (ft_printf_ptr(va_arg(args, void *)));
 	else if (format[i] == 'x' || format[i] == 'X')
-		printed_len += ft_printf_hexadecimal(va_arg(args, long int), format[i]);
-	return (printed_len);
+		return (ft_printf_hexadecimal(va_arg(args, unsigned int), format[i]));
+	return (0);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	args;
-	int		i;
-	int		printed_len;
+	va_list				args;
+	int					i;
+	unsigned long int	printed_len;
 
 	i = 0;
 	printed_len = 0;
