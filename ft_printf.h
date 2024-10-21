@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:14:19 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/21 22:12:34 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/21 22:19:30 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 // includes
 # include <stdarg.h> // va_list
-# include <stdio.h>  //printf
-# include <stdlib.h> //malloc
 # include <unistd.h> //write
 
 // Mandatory part
