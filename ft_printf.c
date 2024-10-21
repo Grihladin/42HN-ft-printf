@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:54:32 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/21 21:27:58 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/21 22:16:08 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ static int	ft_printf_format_definer(const char *format, int i, va_list args)
 	return (0);
 }
 
+static int	line_saver(int *i, int current_len)
+{
+	(*i)++;
+	return (current_len);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
@@ -46,26 +52,14 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			current_len = ft_printf_format_definer(format, i, args);
-			if (current_len == -1)
-				return (-1);
-			printed_len += current_len;
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
-		{
-			current_len = ft_printf_percent();
-			if (current_len == -1)
-				return (-1);
-			printed_len += current_len;
-			i++;
-		}
+			current_len = ft_printf_percent(&i);
 		else
-		{
 			current_len = ft_printf_char(format[i]);
-			if (current_len == -1)
-				return (-1);
-			printed_len += current_len;
-		}
-		i++;
+		if (current_len == -1)
+			return (-1);
+		printed_len += line_saver(&i, current_len);
 	}
 	return (va_end(args), printed_len);
 }

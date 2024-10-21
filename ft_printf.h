@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:14:19 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/19 20:05:14 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/21 22:12:34 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf_char(int c);
 int	ft_printf_str(char *s);
 int	ft_printf_int(int n);
 int	ft_printf_uint(unsigned int n);
-int	ft_printf_percent(void);
+int	ft_printf_percent(int *i);
 int	ft_printf_ptr(void *ptr);
 int	ft_printf_hexadecimal(unsigned int n, int type);
 #endif
