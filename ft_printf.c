@@ -6,14 +6,13 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:54:32 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/19 20:44:49 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/21 21:27:58 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static unsigned long long	ft_printf_format_definer(const char *format, int i,
-		va_list args)
+static int	ft_printf_format_definer(const char *format, int i, va_list args)
 {
 	if (format[i] == 'c')
 		return (ft_printf_char((char)va_arg(args, int)));

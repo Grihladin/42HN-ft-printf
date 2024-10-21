@@ -6,7 +6,7 @@
 /*   By: mratke <mratke@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 16:06:56 by mratke            #+#    #+#             */
-/*   Updated: 2024/10/19 20:38:17 by mratke           ###   ########.fr       */
+/*   Updated: 2024/10/21 16:57:18 by mratke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,17 @@ static int	print_pointer(unsigned long int n)
 
 int	ft_printf_ptr(void *ptr)
 {
+	int	ptr_len;
+
+	ptr_len = 0;
 	if (ptr == NULL)
 		return (ft_printf_str("0x0"));
-	return (ft_printf_str("0x") + print_pointer((unsigned long int)ptr));
+	else
+	{
+		ptr_len += ft_printf_str("0x");
+		if (ptr_len == -1)
+			return (-1);
+		ptr_len += print_pointer((unsigned long int)ptr);
+		return (ptr_len);
+	}
 }
