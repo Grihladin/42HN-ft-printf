@@ -6,14 +6,14 @@
 
 ft_printf is a [42Heilbronn](https://www.42heilbronn.de/en/) project that recreates the standard C library printf function. This implementation demonstrates understanding of variadic functions, string formatting, and low-level output operations using only the write system call.
 
-## Implementation Features
+## 🚀 Implementation Features
 
 - **Variadic Functions**: Uses `va_list`, `va_start`, `va_arg`, and `va_end` for handling variable arguments
 - **Modular Design**: Each format specifier is implemented in its own function
 - **Error Handling**: Returns -1 on write errors, character count on success
 - **Memory Efficient**: Uses only write system call, no malloc for basic functionality
 
-## Supported Format Specifiers
+## 📋 Supported Format Specifiers
 
 - **%c**: Single character
 - **%s**: String of characters  
@@ -25,7 +25,7 @@ ft_printf is a [42Heilbronn](https://www.42heilbronn.de/en/) project that recrea
 - **%X**: Unsigned hexadecimal integer (uppercase)
 - **%%**: Literal percent sign
 
-## Installation
+## 📦 Installation
 
 **Requirements:**
 - macOS or Linux
@@ -37,7 +37,7 @@ cd 42HN-ft_printf
 make
 ```
 
-## Usage
+## 💻 Usage
 
 Include the header in your C files and link the compiled library:
 
@@ -53,7 +53,7 @@ int main(void)
 }
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 ft_printf/
