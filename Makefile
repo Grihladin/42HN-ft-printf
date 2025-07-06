@@ -8,7 +8,9 @@ SRC =	ft_printf.c \
 		ft_printf_ptr.c \
 		ft_printf_hexadecimal.c
 
+OBJ_DIR = obj
 OBJ = $(SRC:.c=.o)
+OBJ := $(addprefix $(OBJ_DIR)/, $(OBJ))
 
 CC = cc
 
@@ -19,15 +21,18 @@ CFLAGS = -Wall -Wextra -Werror #-I/path/to/headers
 # Targets
 all: $(NAME)
 
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o: %.c
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
