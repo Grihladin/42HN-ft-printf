@@ -6,10 +6,6 @@
 
 ft_printf is a [42Heilbronn](https://www.42heilbronn.de/en/) project that recreates the standard C library printf function. This implementation demonstrates understanding of variadic functions, string formatting, and low-level output operations using only the write system call.
 
-## Project Overview
-
-The ft_printf function mimics the behavior of the original printf function, handling various format specifiers and returning the number of characters printed. This project reinforces fundamental concepts in C programming including variadic functions, string manipulation, and memory management.
-
 ## Implementation Features
 
 - **Variadic Functions**: Uses `va_list`, `va_start`, `va_arg`, and `va_end` for handling variable arguments
